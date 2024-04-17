@@ -3,14 +3,36 @@ import { useWeatherData } from '../../../hooks';
 import { WeatherResults } from '../../../components/weatherResults';
 import { useWeatherContext } from '../../../context';
 
+interface WeatherDataType {
+  sys?: {
+    country?: string;
+  };
+  coord?: {
+    lat?: number;
+    lon?: number;
+  };
+  main?: {
+    pressure?: number;
+    temp?: number;
+    humidity?: number;
+    sea_level?: number;
+  };
+  weather?: Array<{
+    description?: string;
+  }>;
+  wind?: {
+    gust?: number;
+    speed?: number;
+  };
+}
 const Display = () => {
   const { city, measurement, setCity, setMeasurement } = useWeatherContext();
 
-  const {
-    loading,
-    weatherData: data,
-    error,
-  } = useWeatherData(city, measurement);
+  const { loading, data, error } = useWeatherData(city, measurement) as {
+    loading: boolean;
+    data: WeatherDataType | null;
+    error: string | null;
+  };
 
   return (
     <main className='w-full px-2 pb-8 bg-black/10 backdrop-blur-sm md:px-8'>

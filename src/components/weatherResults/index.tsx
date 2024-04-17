@@ -1,17 +1,18 @@
 import { useWeatherContext } from '../../context';
 interface WeatherProps {
   city: string;
-  country: string;
-  lat: number;
-  lon: number;
-  temp: number;
-  humidity: number;
-  pressure: number;
-  sealevel: number;
-  windSpeed: number;
-  windGust: number;
-  description: string;
+  country: string | null | undefined; // Accept string, null, or undefined
+  lat: number | null | undefined;
+  lon: number | null | undefined;
+  pressure: number | null | undefined;
+  temp: number | null | undefined;
+  humidity: number | null | undefined;
+  description: string | null | undefined; // Accept string, null, or undefined
+  sealevel: number | null | undefined;
+  windGust: number | null | undefined;
+  windSpeed: number | null | undefined;
 }
+
 const WeatherResults = ({
   city,
   country,
