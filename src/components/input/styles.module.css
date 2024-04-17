@@ -1,0 +1,30 @@
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: var(--neutral-100);
+  display: block;
+  margin-bottom: 6px;
+}
+.input {
+  outline: none;
+  background-color: transparent;
+  height: 100%;
+  padding: 10px 14px;
+  border: none;
+  width: 100%;
+  color: var(--neutral-100);
+  font-family: 'Inter';
+  font-size: 15px;
+  accent-color: #fff;
+}
+.input::placeholder {
+  font-size: 15px;
+}
+.error {
+  font-size: 12px;
+  color: var(--error);
+  display: block;
+  margin-top: 8px;
+}
